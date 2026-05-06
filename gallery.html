@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | People's Development Plantation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="styles.css" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "error": "#ba1a1a", "tertiary": "#3d2b00", "secondary": "#835425",
+          "inverse-surface": "#293040", "inverse-primary": "#95d3ba",
+          "surface-variant": "#dce2f7", "on-tertiary-fixed": "#261a00",
+          "on-primary-fixed": "#002117", "on-secondary-container": "#7a4b1e",
+          "secondary-fixed": "#ffdcc1", "inverse-on-surface": "#edf0ff",
+          "on-tertiary-container": "#dea923", "on-background": "#141b2b",
+          "on-error-container": "#93000a", "surface": "#f9f9ff",
+          "on-surface": "#141b2b", "secondary-container": "#ffbf87",
+          "error-container": "#ffdad6", "on-error": "#ffffff",
+          "on-primary-container": "#80bea6", "on-surface-variant": "#404944",
+          "surface-container-lowest": "#ffffff", "surface-container": "#e9edff",
+          "primary": "#003527", "primary-container": "#064e3b",
+          "primary-fixed-dim": "#95d3ba", "on-primary": "#ffffff",
+          "surface-tint": "#2b6954", "on-secondary-fixed-variant": "#683d0f",
+          "outline": "#707974", "surface-container-low": "#f1f3ff",
+          "tertiary-container": "#584000", "secondary-fixed-dim": "#f9ba82",
+          "tertiary-fixed-dim": "#f6be39", "surface-bright": "#f9f9ff",
+          "on-tertiary": "#ffffff", "on-secondary-fixed": "#2e1500",
+          "tertiary-fixed": "#ffdfa0", "on-primary-fixed-variant": "#0b513d",
+          "surface-dim": "#d3daef", "on-secondary": "#ffffff",
+          "outline-variant": "#bfc9c3", "primary-fixed": "#b0f0d6",
+          "on-tertiary-fixed-variant": "#5c4300", "surface-container-high": "#e1e8fd",
+          "background": "#f9f9ff", "surface-container-highest": "#dce2f7"
+        },
+        borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        spacing: { "margin-edge": "clamp(16px,4vw,48px)", "container-max": "1280px", "section-padding": "clamp(60px,8vw,120px)", "element-gap": "16px", "gutter": "32px" },
+        fontFamily: { "headline-md": ["Manrope"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Manrope"], "display-xl": ["Manrope"], "body-md": ["Inter"], "headline-lg": ["Manrope"], "label-md": ["Inter"] },
+        fontSize: {
+          "headline-md": ["clamp(22px,3vw,32px)", { lineHeight: "1.25", fontWeight: "600" }],
+          "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+          "body-lg": ["clamp(16px,2vw,18px)", { lineHeight: "28px", fontWeight: "400" }],
+          "headline-sm": ["clamp(18px,2.5vw,24px)", { lineHeight: "32px", fontWeight: "600" }],
+          "display-xl": ["clamp(32px,5vw,60px)", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+          "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+          "headline-lg": ["clamp(26px,4vw,48px)", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "600" }],
+          "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }]
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
+
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-sm">
+  <nav class="flex justify-between items-center h-16 sm:h-20 px-4 sm:px-8 lg:px-12 max-w-[1280px] mx-auto">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="logo.png" alt="People's Development Plantation logo" class="h-12 w-auto sm:h-14 object-contain" />
+      <span class="text-base sm:text-headline-sm font-headline-md font-bold text-primary leading-tight max-w-[200px] sm:max-w-none">
+        People's Development Plantation
+      </span>
+    </a>
+    <div class="hidden lg:flex items-center space-x-6 lg:space-x-8">
+      <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="index.html">Home</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="about.html">About</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="services.html">Services</a>
+      <a class="text-primary border-b-2 border-primary font-bold pb-1 font-label-md text-label-md" href="gallery.html">Gallery</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="contact.html">Contact</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="hidden sm:block bg-primary text-on-primary px-4 lg:px-6 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors duration-200 shadow-sm">
+        Invest Now
+      </button>
+      <button class="lg:hidden text-primary p-1" aria-label="Toggle menu" aria-expanded="false">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="lg:hidden bg-surface border-t border-outline-variant">
+    <div class="flex flex-col px-4 py-4 gap-1">
+      <a class="py-3 px-4 font-label-md text-label-md text-on-surface-variant hover:text-primary" href="index.html">Home</a>
+      <a class="py-3 px-4 font-label-md text-label-md text-on-surface-variant hover:text-primary" href="about.html">About</a>
+      <a class="py-3 px-4 font-label-md text-label-md text-on-surface-variant hover:text-primary" href="services.html">Services</a>
+      <a class="py-3 px-4 font-label-md text-label-md text-primary font-bold border-b border-outline-variant/30" href="gallery.html">Gallery</a>
+      <a class="py-3 px-4 font-label-md text-label-md text-on-surface-variant hover:text-primary" href="contact.html">Contact</a>
+      <div class="pt-3 pb-1">
+        <button class="w-full bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md">Invest Now</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="pt-28 sm:pt-32 lg:pt-36">
+  <!-- Hero Section -->
+  <section class="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12 mb-[clamp(40px,6vw,80px)]">
+    <div class="flex flex-col items-center text-center">
+      <span class="font-label-md text-label-md text-primary tracking-widest mb-4">CULTIVATED PROSPERITY</span>
+      <h1 class="font-display-xl text-display-xl text-primary mb-4 sm:mb-6">Our Visual Legacy</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+        Explore the tangible results of strategic investment and sustainable agricultural development through our curated gallery of operations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery Grid - Responsive -->
+  <section class="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12">
+    <!-- Mobile: simple 1-col grid | Tablet: 2-col | Desktop: bento -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-5 lg:gap-8">
+      <!-- Main Featured Item -->
+      <div class="sm:col-span-2 lg:col-span-8 lg:row-span-2 relative group overflow-hidden rounded-xl gallery-item cursor-pointer h-64 sm:h-80 lg:h-auto lg:min-h-[700px]">
+        <img alt="Main Plantation Aerial View" class="w-full h-full object-cover transition-transform duration-500" src="img7.png"/>
+        <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 sm:p-8">
+          <span class="text-white/80 font-label-md text-label-md mb-2">OPERATIONS</span>
+          <h3 class="text-white font-headline-md text-headline-md">Phase One: Maturity</h3>
+        </div>
+      </div>
+      <!-- Secondary Item - Analytics -->
+      <div class="lg:col-span-4 relative group overflow-hidden rounded-xl gallery-item cursor-pointer h-56 sm:h-64 lg:h-[336px]">
+        <div class="absolute inset-0 bg-surface-container-high flex items-center justify-center p-6 sm:p-8">
+          <div class="text-center">
+            
+            <span class="material-symbols-outlined text-primary text-4xl mb-4" style="font-variation-settings:'FILL' 1;">analytics</span>
+            <h4 class="font-headline-sm text-headline-sm text-primary">Yield Analytics</h4>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Visualizing growth data for institutional transparency.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Third Item -->
+      <div class="lg:col-span-4 relative group overflow-hidden rounded-xl gallery-item cursor-pointer h-56 sm:h-64 lg:h-[336px]">
+        <img alt="Corporate HQ" class="w-full h-full object-cover transition-transform duration-500" src="img1.jpg"/>
+        <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 sm:p-6">
+          <span class="text-white/80 font-label-md text-label-md mb-1">FACILITIES</span>
+          <h3 class="text-white font-headline-sm text-headline-sm">Operational Hub</h3>
+        </div>
+      </div>
+      <!-- Fourth Item (Wide) -->
+      <div class="sm:col-span-2 lg:col-span-6 relative group overflow-hidden rounded-xl gallery-item cursor-pointer h-56 sm:h-72 lg:h-[400px]">
+        <img alt="Plantation Growth" class="w-full h-full object-cover transition-transform duration-500" src="img4.jpg"/>
+        <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 sm:p-8">
+          <span class="text-white/80 font-label-md text-label-md mb-2">DEVELOPMENT</span>
+          <h3 class="text-white font-headline-md text-headline-md">Sustainable Nurseries</h3>
+        </div>
+      </div>
+      <!-- Fifth Item -->
+      <div class="sm:col-span-2 lg:col-span-6 relative group overflow-hidden rounded-xl gallery-item cursor-pointer h-56 sm:h-72 lg:h-[400px]">
+        <img alt="Team on Site" class="w-full h-full object-cover transition-transform duration-500" src="img9.png"/>
+        <div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 sm:p-8">
+          <span class="text-white/80 font-label-md text-label-md mb-2">PEOPLE</span>
+          <h3 class="text-white font-headline-md text-headline-md">Expert Management</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Counter Section -->
+  <section class="mt-[clamp(60px,8vw,120px)] bg-primary-container text-white py-16 sm:py-24">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+      <div>
+        <div class="font-display-xl text-display-xl text-primary-fixed-dim">15k+</div>
+        <div class="font-label-md text-label-md uppercase tracking-wider mt-2 opacity-80">Hectares Managed</div>
+      </div>
+      <div>
+        <div class="font-display-xl text-display-xl text-primary-fixed-dim">12%</div>
+        <div class="font-label-md text-label-md uppercase tracking-wider mt-2 opacity-80">Avg. Annual Yield</div>
+      </div>
+      <div>
+        <div class="font-display-xl text-display-xl text-primary-fixed-dim">500+</div>
+        <div class="font-label-md text-label-md uppercase tracking-wider mt-2 opacity-80">Local Partners</div>
+      </div>
+      <div>
+        <div class="font-display-xl text-display-xl text-primary-fixed-dim">24/7</div>
+        <div class="font-label-md text-label-md uppercase tracking-wider mt-2 opacity-80">Site Monitoring</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12 mt-[clamp(60px,8vw,120px)] mb-[clamp(60px,8vw,120px)] text-center">
+    <div class="bg-surface-container-lowest border border-outline-variant p-8 sm:p-16 rounded-2xl shadow-sm">
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-4 sm:mb-6">Invest in the Future of the Land</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-8 sm:mb-10">
+        Our visual track record is built on years of dedicated stewardship and institutional excellence. Join our community of stable growth.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="bg-primary text-on-primary px-8 sm:px-10 py-4 rounded-lg font-headline-sm text-headline-sm hover:scale-105 transition-transform duration-200">
+          Invest Now
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full bg-inverse-surface">
+  <div class="flex flex-col lg:flex-row justify-between items-start pt-8 pb-4 sm:pt-10 sm:pb-5 px-4 sm:px-8 lg:px-12 max-w-[1280px] mx-auto gap-8 lg:gap-12">
+    <div class="flex flex-col gap-4 text-center md:text-left">
+      <div class="footer-brand text-headline-sm font-headline-md font-bold text-inverse-on-surface">People's Development Plantation</div>
+      <div class="font-body-sm text-body-sm text-surface-variant max-w-xs">Advancing global agriculture through institutional precision and sustainable innovation.</div>
+    </div>
+  </div>
+  <div class="border-t border-on-surface-variant/20 py-3 sm:py-4 px-4 sm:px-8 lg:px-12 max-w-[1280px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-3 lg:gap-5">
+    <div class="order-3 lg:order-1 font-body-sm text-body-sm text-surface-variant/60 text-center md:text-left">
+      © 2024 People's Development Plantation. All rights reserved.
+    </div>
+    <div class="order-1 lg:order-2 flex flex-wrap justify-center gap-4 sm:gap-6 lg:ml-auto">
+      <a class="font-label-md text-label-md text-surface-variant hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
+      <a class="font-label-md text-label-md text-surface-variant hover:text-primary-fixed transition-colors" href="#">Terms &amp; Conditions</a>
+      <!-- <a class="font-label-md text-label-md text-surface-variant hover:text-primary-fixed transition-colors" href="#">Sitemap</a> -->
+      <!-- <a class="font-label-md text-label-md text-surface-variant hover:text-primary-fixed transition-colors" href="#">Investor Relations</a> -->
+    </div>
+    <div class="order-2 lg:order-3 flex items-center gap-6">
+      <a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+      <a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+      <a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#"><span class="material-symbols-outlined">phone_in_talk</span></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobile-menu');
+    const nav = e.target.closest('header');
+    if (!nav && menu.classList.contains('open')) menu.classList.remove('open');
+  });
+</script>
+<script src="main.js"></script>
+</body>
+</html>

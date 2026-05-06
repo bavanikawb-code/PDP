@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us | People's Development Plantation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="styles.css" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "error": "#ba1a1a", "tertiary": "#3d2b00", "secondary": "#835425",
+          "inverse-surface": "#293040", "inverse-primary": "#95d3ba",
+          "surface-variant": "#dce2f7", "on-tertiary-fixed": "#261a00",
+          "on-primary-fixed": "#002117", "on-secondary-container": "#7a4b1e",
+          "secondary-fixed": "#ffdcc1", "inverse-on-surface": "#edf0ff",
+          "on-tertiary-container": "#dea923", "on-background": "#141b2b",
+          "on-error-container": "#93000a", "surface": "#f9f9ff",
+          "on-surface": "#141b2b", "secondary-container": "#ffbf87",
+          "error-container": "#ffdad6", "on-error": "#ffffff",
+          "on-primary-container": "#80bea6", "on-surface-variant": "#404944",
+          "surface-container-lowest": "#ffffff", "surface-container": "#e9edff",
+          "primary": "#003527", "primary-container": "#064e3b",
+          "primary-fixed-dim": "#95d3ba", "on-primary": "#ffffff",
+          "surface-tint": "#2b6954", "on-secondary-fixed-variant": "#683d0f",
+          "outline": "#707974", "surface-container-low": "#f1f3ff",
+          "tertiary-container": "#584000", "secondary-fixed-dim": "#f9ba82",
+          "tertiary-fixed-dim": "#f6be39", "surface-bright": "#f9f9ff",
+          "on-tertiary": "#ffffff", "on-secondary-fixed": "#2e1500",
+          "tertiary-fixed": "#ffdfa0", "on-primary-fixed-variant": "#0b513d",
+          "surface-dim": "#d3daef", "on-secondary": "#ffffff",
+          "outline-variant": "#bfc9c3", "primary-fixed": "#b0f0d6",
+          "on-tertiary-fixed-variant": "#5c4300", "surface-container-high": "#e1e8fd",
+          "background": "#f9f9ff", "surface-container-highest": "#dce2f7"
+        },
+        borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        spacing: { "margin-edge": "clamp(16px,4vw,48px)", "container-max": "1280px", "section-padding": "clamp(60px,8vw,120px)", "element-gap": "16px", "gutter": "32px" },
+        fontFamily: { "headline-md": ["Manrope"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Manrope"], "display-xl": ["Manrope"], "body-md": ["Inter"], "headline-lg": ["Manrope"], "label-md": ["Inter"] },
+        fontSize: {
+          "headline-md": ["clamp(22px,3vw,32px)", { lineHeight: "1.25", fontWeight: "600" }],
+          "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+          "body-lg": ["clamp(16px,2vw,18px)", { lineHeight: "28px", fontWeight: "400" }],
+          "headline-sm": ["clamp(18px,2.5vw,24px)", { lineHeight: "32px", fontWeight: "600" }],
+          "display-xl": ["clamp(32px,5vw,60px)", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+          "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+          "headline-lg": ["clamp(26px,4vw,48px)", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "600" }],
+          "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }]
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-sm">
+  <div class="flex justify-between items-center h-16 sm:h-20 px-4 sm:px-8 lg:px-12 max-w-[1280px] mx-auto">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="logo.png" alt="People's Development Plantation logo" class="h-12 w-auto sm:h-14 object-contain" />
+      <span class="text-base sm:text-headline-sm font-headline-md font-bold text-primary leading-tight max-w-[200px] sm:max-w-none">
+        People's Development Plantation
+      </span>
+    </a>
+    <div class="hidden lg:flex items-center gap-6 lg:gap-8">
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html">Home</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="about.html">About</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="services.html">Services</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="gallery.html">Gallery</a>
+      <a class="font-label-md text-label-md text-primary border-b-2 border-primary font-bold pb-1" href="contact.html">Contact</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="hidden sm:block bg-primary-container text-on-primary py-2 sm:py-3 px-4 sm:px-8 rounded-lg font-label-md text-label-md hover:bg-primary transition-colors duration-200">
+        Invest Now
+      </button>
+      <button class="lg:hidden text-primary p-1" aria-label="Toggle menu" aria-expanded="false">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="lg:hidden bg-surface border-t border-outline-variant">
+    <div class="flex flex-col px-4 py-4 gap-1">
+      <a class="py-3 px-4 font-label-md text-label-md text-on-surface-variant hover:text-primary" href="index.html">Home</a>
+      <a class="py-3 px-4 font-label-md text-label-md text-on-surface-variant hover:text-primary" href="about.html">About</a>
+      <a class="py-3 px-4 font-label-md text-label-md text-on-surface-variant hover:text-primary" href="services.html">Services</a>
+      <a class="py-3 px-4 font-label-md text-label-md text-on-surface-variant hover:text-primary" href="gallery.html">Gallery</a>
+      <a class="py-3 px-4 font-label-md text-label-md text-primary font-bold border-b border-outline-variant/30" href="contact.html">Contact</a>
+      <div class="pt-3 pb-1">
+        <button class="w-full bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md">Invest Now</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-20 sm:pt-28 lg:pt-32">
+  <!-- Hero Section -->
+  <section class="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12 py-10 sm:py-16">
+    <div class="flex flex-col gap-3 sm:gap-4">
+      <span class="text-secondary font-label-md tracking-widest uppercase">Get In Touch</span>
+      <h1 class="font-display-xl text-display-xl text-primary max-w-2xl">Partner with us in cultivating a sustainable future.</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Whether you are an institutional investor or seeking technical consultation, our team is ready to provide the insights and data you need for long-term prosperity.</p>
+    </div>
+  </section>
+
+  <!-- Contact Content Section -->
+  <section class="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12 mb-[clamp(60px,8vw,120px)]">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+      <!-- Left Column: Contact Form -->
+      <div class="bg-surface-container-lowest p-6 sm:p-10 rounded-xl shadow-[0_10px_30px_rgba(6,78,59,0.05)] border border-outline-variant/30">
+        <h2 class="font-headline-md text-headline-md text-primary mb-6 sm:mb-8">Send a Message</h2>
+        <form id="contact-form" class="space-y-6 sm:space-y-8" onsubmit="return false;">
+          <div class="space-y-2">
+            <label class="font-label-md text-label-md text-on-surface-variant block" for="name">FULL NAME</label>
+            <input class="w-full bg-transparent border-b border-outline focus:border-primary focus:ring-0 px-0 py-3 font-body-md transition-colors" id="name" name="name" placeholder="Johnathan Doe" type="text"/>
+          </div>
+          <div class="space-y-2">
+            <label class="font-label-md text-label-md text-on-surface-variant block" for="email">CORPORATE EMAIL</label>
+            <input class="w-full bg-transparent border-b border-outline focus:border-primary focus:ring-0 px-0 py-3 font-body-md transition-colors" id="email" name="email" placeholder="j.doe@institution.com" type="email"/>
+          </div>
+          <div class="space-y-2">
+            <label class="font-label-md text-label-md text-on-surface-variant block" for="message">MESSAGE</label>
+            <textarea class="w-full bg-transparent border-b border-outline focus:border-primary focus:ring-0 px-0 py-3 font-body-md transition-colors resize-none" id="message" name="message" placeholder="How can we assist your investment goals?" rows="4"></textarea>
+          </div>
+          <button type="submit" class="w-full sm:w-auto bg-primary text-on-primary py-4 px-8 sm:px-12 rounded-lg font-headline-sm text-headline-sm hover:opacity-90 transition-opacity">
+            Submit Inquiry
+          </button>
+        </form>
+      </div>
+
+      <!-- Right Column: Contact Details & Map -->
+      <div class="flex flex-col gap-5 sm:gap-6">
+        <!-- Contact Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          <div class="p-6 sm:p-8 bg-surface-container-low rounded-lg flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary text-[28px] sm:text-[32px] flex-shrink-0">location_on</span>
+            <div>
+              <h4 class="font-label-md text-label-md text-on-surface-variant mb-2">HEADQUARTERS</h4>
+              <p class="font-body-md text-body-md text-primary">88 Prosperity Avenue, Financial District, SC 29401</p>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 bg-surface-container-low rounded-lg flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary text-[28px] sm:text-[32px] flex-shrink-0">call</span>
+            <div>
+              <h4 class="font-label-md text-label-md text-on-surface-variant mb-2">DIRECT LINE</h4>
+              <p class="font-body-md text-body-md text-primary">+1 (555) 890-2400<br/>+1 (555) 890-2401</p>
+            </div>
+          </div>
+          <div class="sm:col-span-2 p-6 sm:p-8 bg-surface-container-low rounded-lg flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary text-[28px] sm:text-[32px] flex-shrink-0">mail</span>
+            <div>
+              <h4 class="font-label-md text-label-md text-on-surface-variant mb-2">INVESTOR RELATIONS</h4>
+              <p class="font-body-md text-body-md text-primary break-all sm:break-normal">relations@peoplesdevelopment.com</p>
+            </div>
+          </div>
+        </div>
+        <!-- Location Map -->
+        <div class="relative w-full h-64 sm:h-[400px] rounded-xl overflow-hidden shadow-sm border border-outline-variant/30">
+          <iframe
+            title="People's Development Plantation office location map"
+            aria-label="Map showing Colombo 08"
+            allowfullscreen
+            class="w-full h-full border-0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?hl=en&amp;q=Colombo%2008&amp;z=14&amp;output=embed">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter / CTA -->
+  <section class="bg-primary-container py-[clamp(60px,8vw,120px)] text-on-primary">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-12 text-center flex flex-col items-center gap-6 sm:gap-8">
+      <h2 class="font-headline-lg text-headline-lg max-w-3xl">Stay informed on the latest plantation yields and development milestones.</h2>
+      <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md">
+        <input class="flex-grow bg-white/10 border border-white/20 rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-white placeholder-white/60 focus:ring-white focus:outline-none" placeholder="Enter your email" type="email"/>
+        <button class="bg-primary-fixed text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-headline-sm hover:bg-white transition-colors whitespace-nowrap">Subscribe</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full bg-inverse-surface">
+  <div class="flex flex-col lg:flex-row justify-between items-start pt-8 pb-4 sm:pt-10 sm:pb-5 px-4 sm:px-8 lg:px-12 max-w-[1280px] mx-auto gap-8 lg:gap-12">
+    <div class="flex flex-col gap-4 text-center md:text-left">
+      <div class="footer-brand text-headline-sm font-headline-md font-bold text-inverse-on-surface">People's Development Plantation</div>
+      <div class="font-body-sm text-body-sm text-surface-variant max-w-xs">Advancing global agriculture through institutional precision and sustainable innovation.</div>
+    </div>
+  </div>
+  <div class="border-t border-on-surface-variant/20 py-3 sm:py-4 px-4 sm:px-8 lg:px-12 max-w-[1280px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-3 lg:gap-5">
+    <div class="order-3 lg:order-1 font-body-sm text-body-sm text-surface-variant/60 text-center md:text-left">
+      © 2024 People's Development Plantation. All rights reserved.
+    </div>
+    <div class="order-1 lg:order-2 flex flex-wrap justify-center gap-4 sm:gap-6 lg:ml-auto">
+      <a class="font-label-md text-label-md text-surface-variant hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
+      <a class="font-label-md text-label-md text-surface-variant hover:text-primary-fixed transition-colors" href="#">Terms &amp; Conditions</a>
+      <!-- <a class="font-label-md text-label-md text-surface-variant hover:text-primary-fixed transition-colors" href="#">Sitemap</a> -->
+      <!-- <a class="font-label-md text-label-md text-surface-variant hover:text-primary-fixed transition-colors" href="#">Investor Relations</a> -->
+    </div>
+    <div class="order-2 lg:order-3 flex items-center gap-6">
+      <a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+      <a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+      <a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#"><span class="material-symbols-outlined">phone_in_talk</span></a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
